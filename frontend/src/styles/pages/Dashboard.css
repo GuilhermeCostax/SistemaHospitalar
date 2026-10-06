@@ -1,0 +1,692 @@
+/* Estilos da página */
+.date-line {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10px;
+    color: #8d9b9d;
+    margin-bottom: 23px
+}
+
+.date-line>span {
+    padding: 0 4px;
+    color: #b5c1c0
+}
+
+.welcome-banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 237px;
+    border: 1px solid #dcece5;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #e9f5ee, #e4f3ef 70%, #e6f4f0);
+    padding: 28px 30px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between
+}
+
+.banner-tag {
+    font-size: 8px;
+    letter-spacing: 1.6px;
+    color: #518c77;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.banner-tag>span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #69a590
+}
+
+.welcome-banner h2 {
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -.8px;
+    line-height: 1.35;
+    margin-top: 12px;
+    color: #245e50
+}
+
+.welcome-banner p {
+    font-size: 11px;
+    color: #72978a;
+    line-height: 1.8;
+    margin-top: 10px
+}
+
+.welcome-banner a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #287967;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 18px;
+    width: fit-content
+}
+
+.banner-art {
+    position: relative;
+    align-self: center;
+    width: 38%;
+    height: 200px
+}
+
+.art-orbit {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #c5e2d7;
+    border-radius: 50%
+}
+
+.orbit-two {
+    width: 320px;
+    height: 320px;
+    border-color: #d4e9e0
+}
+
+.art-cross {
+    width: 142px;
+    height: 142px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    display: grid;
+    place-items: center;
+    border-radius: 35px;
+    background: linear-gradient(145deg, #fafefb, #dbf1e5);
+    border: 1px solid #fff;
+    color: #4eaa88;
+    box-shadow: 10px 16px 30px #487f6422
+}
+
+.art-cross svg {
+    filter: drop-shadow(4px 5px 0 #2d856519)
+}
+
+.art-chip {
+    position: absolute;
+    background: #ffffffdf;
+    border: 1px solid white;
+    box-shadow: 0 7px 17px #719d8415;
+    border-radius: 11px;
+    color: #5d9b83;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.chip-heart {
+    width: 48px;
+    height: 48px;
+    left: 10%;
+    top: 18px;
+    transform: rotate(-9deg)
+}
+
+.chip-check {
+    padding: 10px 12px;
+    right: 1%;
+    bottom: 14px;
+    gap: 7px;
+    font-size: 9px;
+    transform: rotate(3deg)
+}
+
+.art-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: #a6d8c3;
+    width: 9px;
+    height: 9px
+}
+
+.dot-one {
+    right: 18%;
+    top: 24px
+}
+
+.dot-two {
+    left: 20%;
+    bottom: 17px;
+    width: 6px;
+    height: 6px
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px
+}
+
+.metric {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 18px;
+    border-radius: 9px
+}
+
+.metric-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: #849194
+}
+
+.metric>strong {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 29px;
+    letter-spacing: -1px;
+    margin: 8px 0 6px;
+    line-height: 1.25
+}
+
+.metric>small {
+    color: #92a09f;
+    font-size: 9px
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+    gap: 22px;
+    margin-bottom: 22px
+}
+
+.dashboard-grid th,
+.dashboard-grid td {
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: #6c8181
+}
+
+.time svg {
+    color: #a6b6b5
+}
+
+.occupancy {
+    padding: 0 22px 17px
+}
+
+.occupancy-value {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 3px 0 17px
+}
+
+.occupancy-value>strong {
+    font-family: Manrope, sans-serif;
+    font-size: 35px;
+    letter-spacing: -1px
+}
+
+.occupancy-value small {
+    font-size: 18px;
+    margin-left: 2px;
+    font-weight: 500;
+    color: #8aa299
+}
+
+.occupancy-value>span {
+    font-size: 10px;
+    color: #95a5a3
+}
+
+.occupancy-track {
+    height: 7px;
+    border-radius: 5px;
+    background: #edf3f1;
+    overflow: hidden
+}
+
+.occupancy-track>span {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    background: #77b6a1
+}
+
+.occupancy-legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: #92a29e;
+    margin: 12px 0 21px
+}
+
+.occupancy-legend>span {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.occupancy-legend strong {
+    color: #637b70;
+    font-weight: 500;
+    margin-left: 4px
+}
+
+.occupancy-legend i {
+    height: 6px;
+    width: 6px;
+    background: #77b6a1;
+    border-radius: 2px
+}
+
+.occupancy-legend>span:nth-child(2) i {
+    background: #e5eeea
+}
+
+.room-summary>div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 0;
+    border-top: 1px solid #f1f4f2
+}
+
+.room-mini-icon {
+    height: 29px;
+    width: 29px;
+    display: grid;
+    place-items: center;
+    background: #f5f8f6;
+    border-radius: 6px;
+    color: #8b9f95
+}
+
+.room-summary strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 500
+}
+
+.room-summary small {
+    display: block;
+    font-size: 8px;
+    color: #9aa9a2;
+    margin-top: 3px
+}
+
+.room-summary .badge {
+    margin-left: auto
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    padding: 0 22px 22px
+}
+
+.quick-actions>a {
+    padding: 16px 14px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    gap: 10px
+}
+
+.quick-actions>a:hover {
+    background: #f6faf8;
+    border-color: #c9e1d6
+}
+
+.quick-icon {
+    background: #f0f7f3;
+    color: #80a794;
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    flex-shrink: 0
+}
+
+.quick-actions strong {
+    font-size: 10px;
+    font-weight: 600;
+    display: block
+}
+
+.quick-actions small {
+    font-size: 8px;
+    color: #9caaa7;
+    display: block;
+    margin-top: 6px;
+    line-height: 1.5
+}
+
+.quick-actions>a>svg {
+    margin-left: auto;
+    color: #8caf9f
+}
+
+.timeline {
+    padding: 10px 25px 25px
+}
+
+.timeline-event {
+    display: flex;
+    gap: 22px;
+    padding-bottom: 30px;
+    position: relative
+}
+
+.timeline-event:before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    left: 18px;
+    border-left: 1px solid #e1ece3
+}
+
+.timeline-event:last-child:before {
+    display: none
+}
+
+.timeline-icon {
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    z-index: 1
+}
+
+@media(min-width:1500px) {
+
+    .welcome-banner {
+        min-height: 270px
+    }
+
+    .welcome-banner h2 {
+        font-size: 32px
+    }
+
+    .dashboard-grid {
+        grid-template-columns: minmax(0, 1.8fr) minmax(320px, 1fr)
+    }
+
+    .metric {
+        padding: 22px
+    }
+}
+
+@media(max-width:1200px) {
+
+    .dashboard-grid {
+        grid-template-columns: minmax(0, 1fr)
+    }
+
+    .occupancy {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 30px
+    }
+
+    .occupancy-value,
+.occupancy-track,
+.occupancy-legend {
+        grid-column: 1
+    }
+
+    .room-summary {
+        grid-column: 2;
+        grid-row: 1/4
+    }
+
+    .occupancy-legend {
+        margin-bottom: 15px
+    }
+
+    .quick-actions {
+        gap: 10px;
+        padding-inline: 16px
+    }
+
+    .quick-actions>a {
+        gap: 8px;
+        padding: 13px 10px
+    }
+
+    .quick-actions>a>svg {
+        width: 13px
+    }
+
+    .banner-art {
+        width: 35%
+    }
+
+    .metrics {
+        gap: 10px
+    }
+
+    .metric {
+        padding: 14px
+    }
+
+    .metric-top {
+        font-size: 9px
+    }
+
+    .metric .icon-box {
+        width: 29px;
+        height: 29px
+    }
+
+    .metric>small {
+        font-size: 8px
+    }
+}
+
+@media(max-width:900px) {
+
+    .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px
+    }
+
+    .metric-top {
+        font-size: 11px
+    }
+
+    .metric>small {
+        font-size: 10px
+    }
+
+    .metric {
+        padding: 18px
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr
+    }
+
+    .quick-actions small {
+        font-size: 10px
+    }
+
+    .quick-actions strong {
+        font-size: 12px
+    }
+
+    .quick-actions>a>svg {
+        width: 18px
+    }
+
+    .banner-art {
+        width: 25%;
+        margin-right: 10px
+    }
+
+    .art-cross {
+        width: 100px;
+        height: 100px;
+        border-radius: 26px
+    }
+
+    .art-cross svg {
+        width: 75px
+    }
+
+    .art-orbit {
+        width: 170px;
+        height: 170px
+    }
+
+    .orbit-two {
+        width: 240px;
+        height: 240px
+    }
+
+    .chip-check {
+        display: none
+    }
+
+    .chip-heart {
+        left: -20%;
+        top: 23px;
+        width: 37px;
+        height: 37px
+    }
+
+    .welcome-banner h2 {
+        font-size: 23px
+    }
+}
+
+@media(max-width:700px) {
+
+    .date-line {
+        font-size: 9px;
+        flex-wrap: wrap;
+        line-height: 1.7;
+        margin-bottom: 20px
+    }
+
+    .welcome-banner {
+        padding: 23px 21px;
+        min-height: 230px
+    }
+
+    .welcome-banner h2 {
+        font-size: 24px
+    }
+
+    .welcome-banner p {
+        font-size: 10px
+    }
+
+    .banner-art {
+        position: absolute;
+        right: 16px;
+        top: 28px;
+        opacity: .5;
+        width: 20%;
+        height: 150px
+    }
+
+    .art-cross {
+        width: 75px;
+        height: 75px;
+        border-radius: 19px
+    }
+
+    .art-cross svg {
+        width: 57px
+    }
+
+    .art-orbit {
+        width: 130px;
+        height: 130px
+    }
+
+    .orbit-two {
+        width: 200px;
+        height: 200px
+    }
+
+    .chip-heart {
+        display: none
+    }
+
+    .welcome-banner>div:first-child {
+        position: relative;
+        z-index: 2
+    }
+
+    .metric-top {
+        font-size: 10px
+    }
+
+    .metric>small {
+        font-size: 9px
+    }
+
+    .metric {
+        padding: 14px
+    }
+
+    .metric>strong {
+        font-size: 27px
+    }
+
+    .occupancy {
+        display: block
+    }
+
+    .room-summary {
+        margin-top: 20px
+    }
+
+    .dashboard-grid {
+        gap: 18px
+    }
+
+    .timeline {
+        padding: 6px 16px 16px
+    }
+
+    .timeline-event {
+        gap: 12px
+    }
+
+    .timeline-icon {
+        width: 32px;
+        height: 32px
+    }
+
+    .timeline-event:before {
+        left: 16px
+    }
+
+    .desktop-break {
+        display: none
+    }
+}

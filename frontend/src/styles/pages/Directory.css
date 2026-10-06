@@ -1,0 +1,21 @@
+/* Estilos da página */
+.cell-small {
+    display: block;
+    color: #9aaba4;
+    font-size: 9px
+}
+
+.pagination strong {
+    background: #e9f4ee;
+    color: #58927e;
+    padding: 3px 7px;
+    border-radius: 3px;
+    margin: 0 4px
+}
+
+.room-number {
+    background: #f1f5f3;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #719380
+}

@@ -1,0 +1,169 @@
+/* Estilos da página */
+.detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+    gap: 22px
+}
+
+.detail-layout .panel {
+    margin-bottom: 22px
+}
+
+.record-hero {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 24px;
+    padding: 8px 0 24px;
+    border-bottom: 1px solid var(--line)
+}
+
+.record-hero h2 {
+    font-size: 17px
+}
+
+.record-hero p {
+    color: #9aafa0;
+    font-size: 11px;
+    margin-top: 7px
+}
+
+.record-hero>.badge {
+    margin-left: auto
+}
+
+.record-icon {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    background: #eaf6ef;
+    border-radius: 13px;
+    color: #7fad97
+}
+
+.notes-text {
+    padding: 0 24px 24px;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #84998b
+}
+
+.action-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px;
+    gap: 8px
+}
+
+.action-list>a,
+.action-list>button {
+    border: 1px solid var(--line);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    padding: 12px;
+    border-radius: 6px;
+    color: #6f927d;
+    text-align: left
+}
+
+.action-list>a:hover {
+    background: #f3f9f5
+}
+
+.action-list .danger-link {
+    color: #b58279
+}
+
+.action-list>button {
+    color: #b58279
+}
+
+.info-card {
+    padding: 24px;
+    background: #eaf5ee;
+    border: 1px solid #deeee3;
+    border-radius: 10px
+}
+
+.info-card h3 {
+    font-size: 13px;
+    color: #65977b;
+    margin: 14px 0 8px
+}
+
+.info-card p {
+    font-size: 11px;
+    line-height: 1.9;
+    color: #8caf97
+}
+
+.related-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: #72917a
+}
+
+@media(max-width:900px) {
+
+    .detail-layout {
+        grid-template-columns: 1fr
+    }
+
+    .detail-layout>div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+    }
+
+    .detail-layout>div:last-child .panel {
+        margin-bottom: 0
+    }
+
+    .record-hero {
+        flex-wrap: wrap
+    }
+}
+
+@media(max-width:700px) {
+
+    .record-hero {
+        margin: 0 18px;
+        gap: 12px
+    }
+
+    .record-hero h2 {
+        font-size: 15px
+    }
+
+    .record-hero p {
+        font-size: 10px
+    }
+
+    .record-hero>.badge {
+        margin-left: 69px
+    }
+
+    .detail-layout>div:last-child {
+        grid-template-columns: 1fr
+    }
+
+    .detail-layout {
+        gap: 0
+    }
+
+    .detail-layout .panel {
+        margin-bottom: 18px
+    }
+
+    .notes-text {
+        padding-inline: 18px
+    }
+}

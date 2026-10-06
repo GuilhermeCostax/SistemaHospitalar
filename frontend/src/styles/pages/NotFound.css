@@ -1,0 +1,31 @@
+/* Estilos da página */
+.empty-state {
+    text-align: center;
+    padding: 50px 24px;
+    color: #94ac9a
+}
+
+.empty-state svg {
+    margin-bottom: 14px
+}
+
+.empty-state p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 10px
+}
+
+.empty-state {
+    padding: 80px 20px
+}
+
+.empty-state>span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px
+}
+
+.empty-state .button {
+    margin-top: 26px
+}

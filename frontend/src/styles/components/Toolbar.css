@@ -1,0 +1,71 @@
+/* Estilos do componente compartilhado */
+.toolbar {
+    padding: 0 22px 19px;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e2e9e7;
+    border-radius: 6px;
+    padding: 9px 12px;
+    width: 340px;
+    background: #fff;
+    color: #a4b2ae
+}
+
+.search input {
+    border: 0;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    color: #526f65;
+    font-size: 11px;
+    min-width: 0
+}
+
+.search input::placeholder {
+    color: #a4b2ae
+}
+
+.filters {
+    display: flex;
+    gap: 10px
+}
+
+.filters select {
+    font-size: 10px;
+    min-width: 115px;
+    padding: 9px 10px
+}
+
+@media(max-width:900px) {
+
+    .toolbar {
+        flex-wrap: wrap
+    }
+
+    .search {
+        width: 100%
+    }
+}
+
+@media(max-width:700px) {
+
+    .toolbar {
+        padding-inline: 18px
+    }
+
+    .filters {
+        width: 100%;
+        flex-wrap: wrap
+    }
+
+    .filters select {
+        flex: 1
+    }
+}

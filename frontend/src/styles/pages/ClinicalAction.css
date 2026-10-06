@@ -1,0 +1,26 @@
+/* Estilos da página */
+:where(.clinical-action) .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding: 12px 25px 30px
+}
+
+.action-warning {
+    padding: 16px 18px;
+    background: #fbf7ed;
+    border: 1px solid #f0e6d2;
+    border-radius: 7px;
+    color: #b09b73;
+    font-size: 11px;
+    line-height: 1.8
+}
+
+@media(max-width:700px) {
+
+    :where(.clinical-action) .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px 19px 25px
+    }
+}

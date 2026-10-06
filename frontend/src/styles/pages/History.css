@@ -1,0 +1,158 @@
+/* Estilos da página */
+.history-profile {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 22px
+}
+
+.history-profile h2 {
+    font-size: 18px
+}
+
+.history-profile p {
+    font-size: 11px;
+    color: #99ab9d;
+    margin-top: 9px
+}
+
+.history-profile>a {
+    margin-left: auto
+}
+
+.event-content {
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 0
+}
+
+.event-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.event-top>span {
+    font-size: 10px;
+    color: #96a89b
+}
+
+.event-content h3 {
+    font-size: 13px;
+    margin: 13px 0 8px
+}
+
+.event-content>p {
+    font-size: 12px;
+    color: #7f9685;
+    line-height: 1.8
+}
+
+.event-content>small {
+    display: block;
+    font-size: 10px;
+    color: #a1b1a2;
+    margin: 7px 0 14px
+}
+
+.event-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    background: #f8faf8;
+    padding: 12px;
+    border-radius: 6px;
+    color: #88a38e;
+    margin-bottom: 15px
+}
+
+.event-note svg {
+    margin-top: 3px
+}
+
+.event-note p {
+    font-size: 10px;
+    line-height: 1.8
+}
+
+.empty-history {
+    text-align: center;
+    padding: 50px 24px;
+    color: #94ac9a
+}
+
+.empty-history svg {
+    margin-bottom: 14px
+}
+
+.empty-history h3 {
+    font-size: 15px
+}
+
+.empty-history p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 10px
+}
+
+@media(max-width:900px) {
+
+    .history-profile {
+        flex-wrap: wrap
+    }
+
+    .history-profile>a {
+        margin-left: 74px
+    }
+}
+
+@media(max-width:700px) {
+
+    .history-profile {
+        padding: 19px;
+        gap: 12px
+    }
+
+    .history-profile h2 {
+        font-size: 16px
+    }
+
+    .history-profile p {
+        font-size: 10px;
+        line-height: 1.8
+    }
+
+    .history-profile>div {
+        flex: 1;
+        min-width: 150px
+    }
+
+    .history-profile>a {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 6px
+    }
+
+    .event-content {
+        padding: 15px
+    }
+
+    .event-top {
+        flex-wrap: wrap
+    }
+
+    .event-content h3 {
+        font-size: 12px
+    }
+
+    .event-content>p {
+        font-size: 11px
+    }
+}

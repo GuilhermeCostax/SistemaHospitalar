@@ -1,0 +1,50 @@
+/* Estilos do componente compartilhado */
+.table-scroll {
+    overflow: auto
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap
+}
+
+th {
+    background: #fbfcfc;
+    color: #91a0a2;
+    font-size: 9px;
+    font-weight: 500;
+    padding: 12px 18px;
+    border-block: 1px solid #edf1f1
+}
+
+td {
+    font-size: 10px;
+    color: #677d7e;
+    padding: 17px 18px;
+    border-bottom: 1px solid #edf1f1;
+    line-height: 1.6
+}
+
+td>strong {
+    font-weight: 600;
+    color: #486263
+}
+
+tbody tr:last-child td {
+    border-bottom: 0
+}
+
+tbody tr:hover {
+    background: #fbfdfc
+}
+
+@media(min-width:1500px) {
+
+    th,
+td {
+        padding-top: 20px;
+        padding-bottom: 20px
+    }
+}

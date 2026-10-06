@@ -1,0 +1,151 @@
+/* Estilos da página */
+.availability-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+    gap: 22px
+}
+
+.availability-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 23px 20px;
+    gap: 15px
+}
+
+.availability-date label {
+    font-size: 11px;
+    color: #8b9e93
+}
+
+.availability-date input {
+    font-size: 11px
+}
+
+.availability-professional {
+    padding: 22px;
+    border-top: 1px solid var(--line)
+}
+
+.availability-person {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.slots {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 7px;
+    margin-top: 19px
+}
+
+.slots>span {
+    padding: 9px 3px;
+    border: 1px solid #d6ece0;
+    border-radius: 6px;
+    text-align: center;
+    background: #f2faf5;
+    color: #6f9e80;
+    font-size: 11px
+}
+
+.slots small {
+    display: block;
+    font-size: 8px;
+    margin-top: 5px
+}
+
+.slots .taken {
+    background: #f6f7f6;
+    border-color: #e6eae6;
+    color: #a6b0a6
+}
+
+.availability-foot {
+    padding: 10px 23px 23px;
+    font-size: 10px;
+    color: #94a799;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.availability-foot .muted {
+    margin-left: 16px;
+    background: #b9c4bb
+}
+
+.vacancy-list {
+    padding: 0 20px 12px
+}
+
+.vacancy-list>a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line)
+}
+
+.vacancy-list strong {
+    display: block;
+    font-size: 11px;
+    color: #69836f
+}
+
+.vacancy-list small {
+    display: block;
+    font-size: 9px;
+    margin-top: 5px;
+    color: #9dad9f
+}
+
+.vacancy-list .badge {
+    margin-left: auto
+}
+
+@media(max-width:1200px) {
+
+    .availability-grid {
+        grid-template-columns: 1fr
+    }
+
+    .vacancy-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 20px
+    }
+}
+
+@media(max-width:900px) {
+
+    .slots {
+        gap: 6px
+    }
+}
+
+@media(max-width:700px) {
+
+    .availability-professional {
+        padding: 18px
+    }
+
+    .slots {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px
+    }
+
+    .vacancy-list {
+        display: block;
+        padding-inline: 18px
+    }
+
+    .availability-date {
+        padding-inline: 18px
+    }
+
+    .availability-foot {
+        font-size: 9px
+    }
+}

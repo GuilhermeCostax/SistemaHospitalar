@@ -1,0 +1,40 @@
+/* Estilos do componente compartilhado */
+.person {
+    display: flex;
+    align-items: center;
+    gap: 9px
+}
+
+.avatar {
+    width: 57px;
+    height: 57px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf3ee;
+    color: #789182;
+    border-radius: 50%;
+    font-size: 19px;
+    font-weight: 600;
+    flex-shrink: 0
+}
+
+.avatar.small {
+    height: 30px;
+    width: 30px;
+    font-size: 9px
+}
+
+.person strong {
+    font-weight: 600;
+    display: block;
+    color: #455e5e;
+    font-size: 10px
+}
+
+.person small {
+    display: block;
+    color: #94a2a2;
+    font-size: 9px;
+    margin-top: 3px
+}

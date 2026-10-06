@@ -1,0 +1,92 @@
+/* Estilos do componente compartilhado */
+select,
+input,
+textarea {
+    color: #526c68;
+    border: 1px solid #dfe8e4;
+    border-radius: 6px;
+    background: #fff;
+    padding: 11px 12px;
+    font-size: 12px;
+    max-width: 100%
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.field label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #506e61
+}
+
+.required {
+    color: #6da38a
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    min-height: 43px
+}
+
+.field textarea {
+    resize: vertical;
+    line-height: 1.7;
+    min-height: 110px
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #adbbb3;
+    font-size: 11px
+}
+
+.field small {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #9bafa2
+}
+
+.wide {
+    grid-column: 1/-1
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-top: 1px solid var(--line);
+    background: #fcfdfc;
+    gap: 20px
+}
+
+.form-actions>span {
+    font-size: 10px;
+    color: #95a99b
+}
+
+.form-actions>div {
+    display: flex;
+    gap: 10px
+}
+
+@media(max-width:700px) {
+
+    .form-actions {
+        padding: 18px;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 15px
+    }
+
+    .form-actions>div {
+        width: 100%;
+        justify-content: flex-end
+    }
+}

@@ -1,0 +1,165 @@
+/* Estilos da página */
+.summary-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 20px 24px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    margin-bottom: 24px
+}
+
+.summary-strip span {
+    font-size: 11px;
+    color: #8b9c98
+}
+
+.summary-strip strong {
+    display: block;
+    color: #456b5c;
+    font: 700 24px Manrope, sans-serif;
+    margin-bottom: 6px
+}
+
+.summary-strip+.toolbar {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px
+}
+
+.room-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 21px
+}
+
+.room-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.room-card h2 {
+    font-size: 17px;
+    margin-top: 16px;
+    font-weight: 750
+}
+
+.room-card>p {
+    font-size: 11px;
+    color: #92a39c;
+    margin-top: 6px
+}
+
+.room-card>p>span {
+    margin: 0 5px
+}
+
+.bed-icons {
+    display: flex;
+    gap: 12px;
+    margin: 23px 0
+}
+
+.bed-icons>span {
+    width: 70px;
+    height: 68px;
+    border: 1px solid #d9ece1;
+    border-radius: 7px;
+    background: #f5fbf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    color: #82b298
+}
+
+.bed-icons .occupied {
+    border-color: #efe5d4;
+    background: #fcf9f2;
+    color: #c5ae87
+}
+
+.bed-icons small {
+    font-size: 9px
+}
+
+.room-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font-size: 9px;
+    color: #9bad9f;
+    gap: 10px
+}
+
+@media(max-width:1200px) {
+
+    .room-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+@media(max-width:900px) {
+
+    .room-card {
+        padding: 16px
+    }
+}
+
+@media(max-width:700px) {
+
+    .room-grid {
+        gap: 14px
+    }
+
+    .summary-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px
+    }
+
+    .summary-strip span {
+        font-size: 10px
+    }
+
+    .room-card h2 {
+        font-size: 16px
+    }
+
+    .room-card>p {
+        font-size: 10px
+    }
+
+    .room-card-top {
+        flex-wrap: wrap;
+        gap: 10px
+    }
+
+    .room-card-bottom {
+        flex-direction: column;
+        gap: 12px
+    }
+
+    .bed-icons>span {
+        width: 54px;
+        height: 59px
+    }
+
+    .bed-icons {
+        gap: 8px
+    }
+
+    .bed-icons small {
+        font-size: 8px
+    }
+}
