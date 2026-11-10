@@ -77,6 +77,11 @@ public class ProcedimentoCirurgico extends Atendimento {
         this.observacoes = texto;
     }
 
+    /** Agendado ou em andamento: ainda ocupa a agenda do cirurgiao. */
+    public boolean estaPendente() {
+        return status == StatusCirurgia.AGENDADO || status == StatusCirurgia.EM_ANDAMENTO;
+    }
+
     @Override
     public String getModalidade() {
         return "PROCEDIMENTO_CIRURGICO";

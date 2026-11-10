@@ -64,6 +64,12 @@ public class InternacaoService {
         return repository.salvar(internacao);
     }
 
+    public Internacao trocarQuarto(Long id, Long novoQuartoId) {
+        Internacao internacao = buscar(id);
+        internacao.trocarQuarto(quartoService.buscar(novoQuartoId));
+        return repository.salvar(internacao);
+    }
+
     public Internacao darAlta(Long id, LocalDate dataAlta) {
         Internacao internacao = buscar(id);
         internacao.darAlta(dataAlta != null ? dataAlta : LocalDate.now());

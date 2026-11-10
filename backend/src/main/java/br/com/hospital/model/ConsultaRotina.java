@@ -21,6 +21,11 @@ public class ConsultaRotina extends Consulta {
     }
 
     @Override
+    protected Consulta criarNovoAgendamento(LocalDate novaData, LocalTime novaHora) {
+        return new ConsultaRotina(paciente, medico, novaData, novaHora, motivo);
+    }
+
+    @Override
     public String getModalidade() {
         return "CONSULTA_ROTINA";
     }

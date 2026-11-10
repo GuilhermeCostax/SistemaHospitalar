@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.hospital.dto.ConsultaRequest;
 import br.com.hospital.dto.EncaminhamentoRequest;
 import br.com.hospital.dto.ObservacoesRequest;
+import br.com.hospital.dto.RemarcacaoRequest;
 import br.com.hospital.dto.SituacaoRequest;
 import br.com.hospital.enums.SituacaoConsulta;
 import br.com.hospital.model.Consulta;
@@ -62,5 +63,12 @@ public class ConsultaController {
     @ResponseStatus(HttpStatus.CREATED)
     public Consulta encaminhar(@PathVariable Long id, @Valid @RequestBody EncaminhamentoRequest dados) {
         return service.encaminhar(id, dados);
+    }
+
+    // gera um novo agendamento; a consulta original fica cancelada e ligada a nova
+    @PostMapping("/{id}/remarcar")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Consulta remarcar(@PathVariable Long id, @Valid @RequestBody RemarcacaoRequest dados) {
+        return service.remarcar(id, dados.data(), dados.hora());
     }
 }

@@ -44,6 +44,26 @@ public class Internacao extends Entidade {
         quarto.liberar();
     }
 
+    /** Move o paciente para outro quarto: ocupa o novo antes de liberar o antigo. */
+    public void trocarQuarto(Quarto novoQuarto) {
+        if (status != StatusInternacao.EM_ANDAMENTO) {
+            throw new RegraNegocioException("Só é possível trocar o quarto de uma internação em andamento.");
+        }
+        if (novoQuarto == null) {
+            throw new RegraNegocioException("Informe o novo quarto.");
+        }
+        if (novoQuarto == quarto) {
+            throw new RegraNegocioException("O paciente já está no quarto " + quarto.getNumero() + ".");
+        }
+        novoQuarto.ocupar(); // lanca erro se o novo quarto estiver lotado
+        quarto.liberar();
+        quarto = novoQuarto;
+    }
+
+    public boolean estaEmAndamento() {
+        return status == StatusInternacao.EM_ANDAMENTO;
+    }
+
     public Paciente getPaciente() {
         return paciente;
     }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.hospital.dto.AltaRequest;
 import br.com.hospital.dto.InternacaoRequest;
+import br.com.hospital.dto.TrocaQuartoRequest;
 import br.com.hospital.enums.StatusInternacao;
 import br.com.hospital.model.Internacao;
 import br.com.hospital.service.InternacaoService;
@@ -44,6 +45,11 @@ public class InternacaoController {
     @ResponseStatus(HttpStatus.CREATED)
     public Internacao internar(@Valid @RequestBody InternacaoRequest dados) {
         return service.internar(dados);
+    }
+
+    @PutMapping("/{id}/trocar-quarto")
+    public Internacao trocarQuarto(@PathVariable Long id, @Valid @RequestBody TrocaQuartoRequest dados) {
+        return service.trocarQuarto(id, dados.quartoId());
     }
 
     // corpo opcional: {"dataAlta": "2026-12-10"}

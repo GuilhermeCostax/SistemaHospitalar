@@ -40,4 +40,13 @@ public enum SituacaoConsulta {
     public boolean estaAtiva() {
         return this == AGENDADA || this == CONFIRMADA || this == EM_ATENDIMENTO;
     }
+
+    /**
+     * Uma consulta que ainda nao comecou, foi cancelada ou teve falta pode ser
+     * remarcada. A remarcacao gera um novo agendamento; a consulta antiga nunca
+     * "volta" para AGENDADA.
+     */
+    public boolean podeSerRemarcada() {
+        return this == AGENDADA || this == CONFIRMADA || this == CANCELADA || this == NAO_COMPARECEU;
+    }
 }
