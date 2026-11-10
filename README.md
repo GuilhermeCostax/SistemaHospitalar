@@ -16,6 +16,18 @@ Consulte a [documentação do frontend](frontend/README.md) para ver a estrutura
 
 
 
+## Sprint 2
+
+Nesta semana criei o backend do sistema com Spring Boot, na pasta `backend`. Fiz as classes do hospital (pacientes, médicos, consultas, internações, quartos, emergências e cirurgias) e as rotas da API para cadastrar e consultar cada uma delas.
+
+Também coloquei as regras que o trabalho pediu, por exemplo:
+
+- cada tipo de médico (clínico geral, especialista e cirurgião) tem suas próprias informações;
+- cada tipo de atendimento confere suas próprias condições antes de ser feito;
+- a consulta segue uma ordem de situações e não volta para uma etapa anterior (uma consulta concluída não pode voltar a ser agendada);
+- o quarto não aceita mais pacientes do que a capacidade dele.
+
+Testei as rotas pelo terminal e as regras funcionaram. Por enquanto os dados ficam só na memória, então somem quando o programa é reiniciado. Para rodar: `cd backend` e depois `mvn spring-boot:run`.
 
 # Diagrama UML
 
