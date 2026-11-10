@@ -60,6 +60,17 @@ public class Internacao extends Entidade {
         quarto = novoQuarto;
     }
 
+    public void atualizar(LocalDate novaPrevisaoAlta, String novasObservacoes) {
+        if (status != StatusInternacao.EM_ANDAMENTO) {
+            throw new RegraNegocioException("Uma internação com alta realizada não pode ser alterada.");
+        }
+        if (novaPrevisaoAlta != null && novaPrevisaoAlta.isBefore(dataEntrada)) {
+            throw new RegraNegocioException("A previsão de alta não pode ser anterior à data de entrada.");
+        }
+        this.previsaoAlta = novaPrevisaoAlta;
+        this.observacoes = novasObservacoes;
+    }
+
     public boolean estaEmAndamento() {
         return status == StatusInternacao.EM_ANDAMENTO;
     }

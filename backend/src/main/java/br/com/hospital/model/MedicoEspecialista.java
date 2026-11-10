@@ -15,6 +15,10 @@ public class MedicoEspecialista extends Profissional {
         return especialidade;
     }
 
+    public void setEspecialidade(Especialidade especialidade) {
+        this.especialidade = especialidade;
+    }
+
     @Override
     public String getCategoria() {
         return "ESPECIALISTA";

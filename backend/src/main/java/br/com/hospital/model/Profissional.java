@@ -19,6 +19,10 @@ public abstract class Profissional extends Pessoa {
         return registro;
     }
 
+    public void setRegistro(String registro) {
+        this.registro = registro;
+    }
+
     /** Nome da categoria, aparece no JSON como "categoria". */
     @JsonProperty("categoria")
     public abstract String getCategoria();

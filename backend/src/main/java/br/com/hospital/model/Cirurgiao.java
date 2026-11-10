@@ -24,6 +24,10 @@ public class Cirurgiao extends Profissional {
         return areaCirurgica;
     }
 
+    public void setAreaCirurgica(String areaCirurgica) {
+        this.areaCirurgica = areaCirurgica;
+    }
+
     @JsonIgnore
     public List<ProcedimentoCirurgico> getProcedimentos() {
         return procedimentos;
