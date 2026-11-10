@@ -12,6 +12,9 @@ public abstract class Consulta extends Atendimento {
     protected Profissional medico;
     protected String motivo;
     protected SituacaoConsulta situacao = SituacaoConsulta.AGENDADA;
+    // ligacao entre a consulta original e a consulta gerada pela remarcacao
+    private Long consultaOrigemId;
+    private Long remarcadaParaId;
 
     public Consulta(Paciente paciente, Profissional medico, LocalDate data, LocalTime hora, String motivo) {
         super(paciente, data, hora);
@@ -49,6 +52,34 @@ public abstract class Consulta extends Atendimento {
         this.observacoes = texto;
     }
 
+    /**
+     * Cria o novo agendamento da remarcacao, com a mesma modalidade, paciente e medico.
+     * A consulta atual nao e alterada aqui: so depois que a nova for validada e salva
+     * e que o service chama {@link #confirmarRemarcacao(Consulta)}.
+     */
+    public Consulta remarcar(LocalDate novaData, LocalTime novaHora) {
+        if (remarcadaParaId != null) {
+            throw new RegraNegocioException("Esta consulta já foi remarcada (nova consulta " + remarcadaParaId + ").");
+        }
+        if (!situacao.podeSerRemarcada()) {
+            throw new RegraNegocioException("Uma consulta '" + situacao.getDescricao() + "' não pode ser remarcada.");
+        }
+        Consulta nova = criarNovoAgendamento(novaData, novaHora);
+        nova.consultaOrigemId = getId();
+        return nova;
+    }
+
+    /** Liga a consulta original a nova e cancela a original se ela ainda estava ativa. */
+    public void confirmarRemarcacao(Consulta nova) {
+        this.remarcadaParaId = nova.getId();
+        if (situacao.estaAtiva()) {
+            situacao = SituacaoConsulta.CANCELADA;
+        }
+    }
+
+    /** Cada modalidade sabe criar uma copia de si mesma para outra data e horario. */
+    protected abstract Consulta criarNovoAgendamento(LocalDate novaData, LocalTime novaHora);
+
     public Profissional getMedico() {
         return medico;
     }
@@ -59,5 +90,13 @@ public abstract class Consulta extends Atendimento {
 
     public SituacaoConsulta getSituacao() {
         return situacao;
+    }
+
+    public Long getConsultaOrigemId() {
+        return consultaOrigemId;
+    }
+
+    public Long getRemarcadaParaId() {
+        return remarcadaParaId;
     }
 }

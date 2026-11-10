@@ -35,6 +35,11 @@ public class ConsultaEspecializada extends Consulta {
     }
 
     @Override
+    protected Consulta criarNovoAgendamento(LocalDate novaData, LocalTime novaHora) {
+        return new ConsultaEspecializada(paciente, medico, novaData, novaHora, motivo, especialidade);
+    }
+
+    @Override
     public String getModalidade() {
         return "CONSULTA_ESPECIALIZADA";
     }

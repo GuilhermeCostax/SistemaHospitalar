@@ -1,5 +1,7 @@
 package br.com.hospital.service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -89,16 +91,33 @@ public class ConsultaService {
         return salvarSeValida(nova);
     }
 
+    /**
+     * Remarca a consulta criando um novo agendamento. A original fica cancelada
+     * (se ainda estava ativa) e as duas ficam ligadas pelos ids.
+     */
+    public Consulta remarcar(Long id, LocalDate novaData, LocalTime novaHora) {
+        Consulta origem = buscar(id);
+        Consulta nova = origem.remarcar(novaData, novaHora);
+        salvarSeValida(nova);
+        origem.confirmarRemarcacao(nova);
+        repository.salvar(origem);
+        return nova;
+    }
+
+    /** Verdadeiro se o medico ja tem uma consulta ativa neste dia e horario. */
+    public boolean medicoTemConsulta(Long medicoId, LocalDate data, LocalTime hora) {
+        return repository.listar().stream()
+                .filter(c -> c.getSituacao().estaAtiva())
+                .anyMatch(c -> c.getMedico().getId().equals(medicoId)
+                        && c.getData().equals(data)
+                        && c.getHora().equals(hora));
+    }
+
     // aplica a validacao da modalidade e verifica se o medico esta livre no horario
     private Consulta salvarSeValida(Consulta consulta) {
         consulta.validarCondicoes();
 
-        boolean horarioOcupado = repository.listar().stream()
-                .filter(c -> c.getSituacao().estaAtiva())
-                .anyMatch(c -> c.getMedico().getId().equals(consulta.getMedico().getId())
-                        && c.getData().equals(consulta.getData())
-                        && c.getHora().equals(consulta.getHora()));
-        if (horarioOcupado) {
+        if (medicoTemConsulta(consulta.getMedico().getId(), consulta.getData(), consulta.getHora())) {
             throw new RegraNegocioException("O médico já possui uma consulta neste dia e horário.");
         }
         return repository.salvar(consulta);

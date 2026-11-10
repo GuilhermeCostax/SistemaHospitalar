@@ -1,5 +1,7 @@
 package br.com.hospital.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,10 @@ public class Cirurgiao extends Profissional {
         return areaCirurgica;
     }
 
+    public void setAreaCirurgica(String areaCirurgica) {
+        this.areaCirurgica = areaCirurgica;
+    }
+
     @JsonIgnore
     public List<ProcedimentoCirurgico> getProcedimentos() {
         return procedimentos;
@@ -29,6 +35,18 @@ public class Cirurgiao extends Profissional {
 
     public void registrarProcedimento(ProcedimentoCirurgico procedimento) {
         procedimentos.add(procedimento);
+    }
+
+    /** Verdadeiro se ha um procedimento agendado ou em andamento neste dia e horario. */
+    public boolean temProcedimentoEm(LocalDate data, LocalTime hora) {
+        return procedimentos.stream()
+                .filter(ProcedimentoCirurgico::estaPendente)
+                .anyMatch(p -> p.getData().equals(data) && p.getHora().equals(hora));
+    }
+
+    /** Verdadeiro se ainda existe algum procedimento agendado ou em andamento. */
+    public boolean temProcedimentosPendentes() {
+        return procedimentos.stream().anyMatch(ProcedimentoCirurgico::estaPendente);
     }
 
     @Override

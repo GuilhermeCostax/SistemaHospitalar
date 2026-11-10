@@ -48,10 +48,7 @@ public class CirurgiaService {
         procedimento.validarCondicoes();
 
         // o cirurgiao nao pode estar em duas cirurgias no mesmo horario
-        boolean ocupado = cirurgiao.getProcedimentos().stream()
-                .filter(p -> p.getStatus() == StatusCirurgia.AGENDADO || p.getStatus() == StatusCirurgia.EM_ANDAMENTO)
-                .anyMatch(p -> p.getData().equals(dados.dataPrevista()) && p.getHora().equals(dados.horaPrevista()));
-        if (ocupado) {
+        if (cirurgiao.temProcedimentoEm(dados.dataPrevista(), dados.horaPrevista())) {
             throw new RegraNegocioException("O cirurgião já possui um procedimento neste dia e horário.");
         }
 

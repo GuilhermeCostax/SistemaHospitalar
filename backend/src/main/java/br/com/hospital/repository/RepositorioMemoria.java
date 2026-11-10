@@ -32,4 +32,8 @@ public abstract class RepositorioMemoria<T extends Entidade> {
     public synchronized List<T> listar() {
         return new ArrayList<>(dados.values());
     }
+
+    public synchronized void remover(Long id) {
+        dados.remove(id);
+    }
 }

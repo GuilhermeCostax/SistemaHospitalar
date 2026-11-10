@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.com.hospital.dto.AtualizacaoInternacaoRequest;
 import br.com.hospital.dto.InternacaoRequest;
 import br.com.hospital.enums.StatusInternacao;
 import br.com.hospital.exception.NaoEncontradoException;
@@ -61,6 +62,18 @@ public class InternacaoService {
         internacao.validar();
 
         quarto.ocupar(); // lanca erro se o quarto estiver lotado
+        return repository.salvar(internacao);
+    }
+
+    public Internacao atualizar(Long id, AtualizacaoInternacaoRequest dados) {
+        Internacao internacao = buscar(id);
+        internacao.atualizar(dados.previsaoAlta(), dados.observacoes());
+        return repository.salvar(internacao);
+    }
+
+    public Internacao trocarQuarto(Long id, Long novoQuartoId) {
+        Internacao internacao = buscar(id);
+        internacao.trocarQuarto(quartoService.buscar(novoQuartoId));
         return repository.salvar(internacao);
     }
 
